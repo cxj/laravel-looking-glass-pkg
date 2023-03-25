@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `LookingGlassPkg` will be documented in this file.
+All notable changes to `looking-glass-pkg` will be documented in this file.
 
 ## Version 1.0
 
