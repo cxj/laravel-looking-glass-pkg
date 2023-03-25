@@ -4,7 +4,7 @@ Contributions are welcome and will be fully credited.
 
 Contributions are accepted via Pull Requests on [Github](https://github.com/cxj/looking-glass-pkg).
 
-# Things you could do
+## Things you could do
 If you want to contribute but do not know where to start, this list provides some starting points.
 - Write more documentation.
 - Make the web pages look more beautiful.

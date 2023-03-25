@@ -3,11 +3,11 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
+[![StyleCI][ico-styleci]][link-styleci] waiting for repo to be made public
 
 A status monitoring board for distributed or remote applications.
 
-Take a look at [contributing.md](contributing.md) to see a to do list.
+Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) to see a to do list.
 
 ## Installation
 
