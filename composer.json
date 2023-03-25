@@ -10,8 +10,9 @@
         }
     ],
     "homepage": "https://github.com/cxj/looking-glass-pkg",
-    "keywords": ["Laravel", "LookingGlassPkg"],
+    "keywords": ["laravel", "LookingGlass"],
     "require": {
+        "php": "^8.1",
         "illuminate/support": "~9",
         "spatie/laravel-webhook-client": "^3.1"
     },
@@ -21,21 +22,21 @@
     },
     "autoload": {
         "psr-4": {
-            "Cxj\\LookingGlassPkg\\": "src/"
+            "Cxj\\LookingGlass\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Cxj\\LookingGlassPkg\\Tests\\": "tests"
+            "Cxj\\LookingGlass\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Cxj\\LookingGlassPkg\\LookingGlassPkgServiceProvider"
+                "Cxj\\LookingGlass\\LookingGlassServiceProvider"
             ],
             "aliases": {
-                "LookingGlassPkg": "Cxj\\LookingGlassPkg\\Facades\\LookingGlassPkg"
+                "LookingGlass": "Cxj\\LookingGlass\\Facades\\LookingGlass"
             }
         }
     }
