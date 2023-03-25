@@ -1,0 +1,41 @@
+{
+    "name": "cxj/looking-glass-pkg",
+    "description": "A status monitoring board for distributed or remote applications.",
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Chris Johnson",
+            "email": "cxjohnson@gmail.com",
+            "homepage": "http://cxj.github.io/"
+        }
+    ],
+    "homepage": "https://github.com/cxj/looking-glass-pkg",
+    "keywords": ["Laravel", "LookingGlassPkg"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cxj\\LookingGlassPkg\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cxj\\LookingGlassPkg\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cxj\\LookingGlassPkg\\LookingGlassPkgServiceProvider"
+            ],
+            "aliases": {
+                "LookingGlassPkg": "Cxj\\LookingGlassPkg\\Facades\\LookingGlassPkg"
+            }
+        }
+    }
+}
