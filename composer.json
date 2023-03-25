@@ -12,7 +12,8 @@
     "homepage": "https://github.com/cxj/looking-glass-pkg",
     "keywords": ["Laravel", "LookingGlassPkg"],
     "require": {
-        "illuminate/support": "~9"
+        "illuminate/support": "~9",
+        "spatie/laravel-webhook-client": "^3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
