@@ -1,8 +1,8 @@
 <?php
 
-namespace Cxj\LookingGlassPkg;
+namespace Cxj\LookingGlass;
 
-class LookingGlassPkg
+class LookingGlass
 {
     // Build wonderful things
 }

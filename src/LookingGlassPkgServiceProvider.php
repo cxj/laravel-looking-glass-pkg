@@ -1,10 +1,10 @@
 <?php
 
-namespace Cxj\LookingGlassPkg;
+namespace Cxj\LookingGlass;
 
 use Illuminate\Support\ServiceProvider;
 
-class LookingGlassPkgServiceProvider extends ServiceProvider
+class LookingGlass extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -31,11 +31,11 @@ class LookingGlassPkgServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/looking-glass-pkg.php', 'looking-glass-pkg');
+        $this->mergeConfigFrom(__DIR__.'/../config/looking-glass.php', 'looking-glass');
 
         // Register the service the package provides.
-        $this->app->singleton('looking-glass-pkg', function ($app) {
-            return new LookingGlassPkg;
+        $this->app->singleton('looking-glass', function ($app) {
+            return new LookingGlass;
         });
     }
 
@@ -46,7 +46,7 @@ class LookingGlassPkgServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['looking-glass-pkg'];
+        return ['looking-glass'];
     }
 
     /**
@@ -58,23 +58,23 @@ class LookingGlassPkgServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/looking-glass-pkg.php' => config_path('looking-glass-pkg.php'),
-        ], 'looking-glass-pkg.config');
+            __DIR__.'/../config/looking-glass.php' => config_path('looking-glass.php'),
+        ], 'looking-glass.config');
 
         // Publishing the views.
         /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/cxj'),
-        ], 'looking-glass-pkg.views');*/
+        ], 'looking-glass.views');*/
 
         // Publishing assets.
         /*$this->publishes([
             __DIR__.'/../resources/assets' => public_path('vendor/cxj'),
-        ], 'looking-glass-pkg.views');*/
+        ], 'looking-glass.views');*/
 
         // Publishing the translation files.
         /*$this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/cxj'),
-        ], 'looking-glass-pkg.views');*/
+        ], 'looking-glass.views');*/
 
         // Registering package commands.
         // $this->commands([]);

@@ -1,10 +1,10 @@
 <?php
 
-namespace Cxj\LookingGlassPkg\Facades;
+namespace Cxj\LookingGlass\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class LookingGlassPkg extends Facade
+class LookingGlass extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class LookingGlassPkg extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'looking-glass-pkg';
+        return 'looking-glass';
     }
 }
