@@ -4,7 +4,7 @@ namespace Cxj\LookingGlass;
 
 use Illuminate\Support\ServiceProvider;
 
-class LookingGlass extends ServiceProvider
+class LookingGlassServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -15,8 +15,10 @@ class LookingGlass extends ServiceProvider
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cxj');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'cxj');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        dump('DIR', __DIR__); // debug
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -35,7 +37,7 @@ class LookingGlass extends ServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('looking-glass', function ($app) {
-            return new LookingGlass;
+            return new LookingGlassServiceProvider;
         });
     }
 
