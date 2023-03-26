@@ -2,6 +2,7 @@
 
 namespace Cxj\LookingGlass;
 
+use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
 
 class LookingGlassServiceProvider extends ServiceProvider
@@ -18,12 +19,15 @@ class LookingGlassServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
-        dump('DIR', __DIR__); // debug
-
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
+            $this->commands([
+                \Cxj\LookingGlass\Console\Commands\RunHealthChecksCommand::class,
+            ]);
         }
+
+        AboutCommand::add('Looking Glass', fn () => ['Version' => '0.0.2']);
     }
 
     /**
