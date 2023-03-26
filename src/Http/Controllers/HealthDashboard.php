@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\View\View;
+use Illuminate\Contracts\View\View;
 use Spatie\Health\Commands\RunHealthChecksCommand;
 use Spatie\Health\Health;
 use Spatie\Health\ResultStores\ResultStore;

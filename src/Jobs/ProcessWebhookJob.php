@@ -2,7 +2,7 @@
 
 namespace Cxj\LookingGlass\Jobs;
 
-use App\Models\RemoteHealthCheckModel;
+use Cxj\LookingGlass\Models\RemoteHealthCheckModel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;

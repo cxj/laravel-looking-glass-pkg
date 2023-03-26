@@ -2,7 +2,7 @@
 
 namespace Cxj\LookingGlass\HealthCheck;
 
-use App\Models\RemoteHealthCheckModel;
+use Cxj\LookingGlass\Models\RemoteHealthCheckModel;
 use Spatie\Health\Checks\Check;
 use Spatie\Health\Checks\Result;
 
@@ -11,7 +11,7 @@ class RemoteCheck extends Check
     private Result $result;
 
 
-    public function __construct(private RemoteHealthCheckModel $remote)
+    public function __construct(private readonly RemoteHealthCheckModel $remote)
     {
         $this->result = Result::make();
 

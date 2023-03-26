@@ -2,8 +2,8 @@
 
 namespace Cxj\LookingGlass\Domain;
 
-use App\HealthCheck\RemoteCheck;
-use App\Models\RemoteHealthCheckModel;
+use Cxj\LookingGlass\HealthCheck\RemoteCheck;
+use Cxj\LookingGlass\Models\RemoteHealthCheckModel;
 use Spatie\Health\Checks\Checks\DatabaseCheck;
 use Spatie\Health\Checks\Checks\OptimizedAppCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;

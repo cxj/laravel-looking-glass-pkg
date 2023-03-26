@@ -15,8 +15,8 @@ class LookingGlassServiceProvider extends ServiceProvider
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cxj');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'cxj');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
         dump('DIR', __DIR__); // debug
 
@@ -33,11 +33,14 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/looking-glass.php', 'looking-glass');
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/looking-glass.php',
+            'looking-glass'
+        );
 
         // Register the service the package provides.
         $this->app->singleton('looking-glass', function ($app) {
-            return new LookingGlassServiceProvider;
+            return new LookingGlassServiceProvider($app);
         });
     }
 
@@ -46,7 +49,7 @@ class LookingGlassServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['looking-glass'];
     }
@@ -60,7 +63,9 @@ class LookingGlassServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/looking-glass.php' => config_path('looking-glass.php'),
+            __DIR__ . '/../config/looking-glass.php' => config_path(
+                'looking-glass.php'
+            ),
         ], 'looking-glass.config');
 
         // Publishing the views.
