@@ -2,6 +2,7 @@
 
 namespace Cxj\LookingGlass\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $result
  * @property string $created_at
  * @property string $updated_at
- * @mixin \Eloquent
+ * @mixin Builder;
  */
 class RemoteHealthCheckModel extends Model
 {
