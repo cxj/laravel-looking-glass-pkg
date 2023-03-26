@@ -2,6 +2,7 @@
 
 namespace Cxj\LookingGlass;
 
+use Cxj\LookingGlass\Console\Commands\RunHealthChecksCommand;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
 
@@ -9,8 +10,6 @@ class LookingGlassServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -22,9 +21,6 @@ class LookingGlassServiceProvider extends ServiceProvider
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
-            $this->commands([
-                \Cxj\LookingGlass\Console\Commands\RunHealthChecksCommand::class,
-            ]);
         }
 
         AboutCommand::add('Looking Glass', fn () => ['Version' => '0.0.2']);
@@ -32,8 +28,6 @@ class LookingGlassServiceProvider extends ServiceProvider
 
     /**
      * Register any package services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -50,8 +44,6 @@ class LookingGlassServiceProvider extends ServiceProvider
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
     public function provides(): array
     {
@@ -60,8 +52,6 @@ class LookingGlassServiceProvider extends ServiceProvider
 
     /**
      * Console-specific booting.
-     *
-     * @return void
      */
     protected function bootForConsole(): void
     {
@@ -88,6 +78,8 @@ class LookingGlassServiceProvider extends ServiceProvider
         ], 'looking-glass.views');*/
 
         // Registering package commands.
-        // $this->commands([]);
+        $this->commands([
+            RunHealthChecksCommand::class,
+        ]);
     }
 }
