@@ -3,8 +3,12 @@
 namespace Cxj\LookingGlass;
 
 use Cxj\LookingGlass\Console\Commands\RunHealthChecksCommand;
+use Cxj\LookingGlass\View\Components\AppLayout;
 use Illuminate\Foundation\Console\AboutCommand;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Health\HealthServiceProvider;
+use Spatie\WebhookClient\WebhookClientServiceProvider;
 
 class LookingGlassServiceProvider extends ServiceProvider
 {
@@ -13,8 +17,12 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        echo 'BOOT ' . __METHOD__ . PHP_EOL; // debug
+
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cxj');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'cxj');
+
+        Blade::component('app-layout', AppLayout::class);
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'cxj');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
@@ -31,6 +39,8 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        echo 'WTF ' . __METHOD__ . PHP_EOL; // debug
+
         $this->mergeConfigFrom(
             __DIR__ . '/../config/looking-glass.php',
             'looking-glass'
@@ -40,6 +50,22 @@ class LookingGlassServiceProvider extends ServiceProvider
         $this->app->singleton('looking-glass', function ($app) {
             return new LookingGlassServiceProvider($app);
         });
+
+        // FAWKING Laravel
+        // This needs to be here to be sure Webhook service provider gets
+        // loaded before the custom webhook route is registered by Laravel.
+        $this->app->register(WebhookClientServiceProvider::class);
+
+        $this->app->register(HealthServiceProvider::class); // testing?
+
+
+        /*
+         * Needed?
+         * Create aliases for the dependency.
+         */
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+//        $loader->alias('AuthorizationServer', 'LucaDegasperi\OAuth2Server\Facades\AuthorizationServerFacade');
+//        $loader->alias('ResourceServer', 'LucaDegasperi\OAuth2Server\Facades\ResourceServerFacade');
     }
 
     /**
@@ -55,6 +81,8 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
+        echo __METHOD__ . ' publishing config and command...' . PHP_EOL; // debug
+
         // Publishing the configuration file.
         $this->publishes([
             __DIR__ . '/../config/looking-glass.php' => config_path(

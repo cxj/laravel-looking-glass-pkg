@@ -24,7 +24,7 @@ class HealthDashboard
 
         $checkResults = $resultStore->latestResults();
 
-        return view('dashboard', [
+        return view('cxj::dashboard', [
             'lastRanAt'    => new Carbon($checkResults?->finishedAt),
             'checkResults' => $checkResults,
             'assets'       => $health->assets(),
