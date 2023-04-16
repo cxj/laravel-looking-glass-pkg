@@ -2,8 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci] waiting for repo to be made public
+[![StyleCI][ico-styleci]][link-styleci]
 
 A status monitoring board for distributed or remote applications.
 
@@ -46,12 +45,10 @@ AGPL-3.0-or-later. Please see the [license file](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/cxj/laravel-looking-glass-pkg.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/cxj/laravel-looking-glass-pkg.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/cxj/laravel-looking-glass-pkg/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-styleci]: https://styleci.io/repos/packagist/cxj/laravel-looking-glass-pkg.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/cxj/laravel-looking-glass-pkg
 [link-downloads]: https://packagist.org/packages/cxj/laravel-looking-glass-pkg
-[link-travis]: https://travis-ci.org/cxj/laravel-looking-glass-pkg
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/cxj
 [link-contributors]: ../../contributors
