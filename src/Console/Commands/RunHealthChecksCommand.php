@@ -95,7 +95,6 @@ class RunHealthChecksCommand extends Command
             });
     }
 
-    /** @param Collection<int, Result> $results */
     protected function storeResults(Collection $results): self
     {
         app(Health::class)
@@ -142,19 +141,19 @@ class RunHealthChecksCommand extends Command
         $okMessage = $status;
 
         if (!empty($result->shortSummary)) {
-            $okMessage .= ": {$result->shortSummary}";
+            $okMessage .= ": $result->shortSummary";
         }
 
         match ($result->status) {
             Status::ok()      => $this->info($okMessage),
             Status::warning() => $this->comment(
-                "{$status}: {$result->getNotificationMessage()}"
+                "$status: {$result->getNotificationMessage()}"
             ),
             Status::failed() => $this->error(
-                "{$status}: {$result->getNotificationMessage()}"
+                "$status: {$result->getNotificationMessage()}"
             ),
             Status::crashed() => $this->error(
-                "{$status}}: `{$exception?->getMessage()}`"
+                "$status}: `{$exception?->getMessage()}`"
             ),
             default => null,
         };
