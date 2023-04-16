@@ -1,5 +1,5 @@
 {
-    "name": "cxj/looking-glass-pkg",
+    "name": "cxj/laravel-looking-glass-pkg",
     "description": "A status monitoring board for distributed or remote applications.",
     "license": "AGPL-3.0-or-later",
     "authors": [
