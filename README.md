@@ -21,7 +21,7 @@ $ composer require cxj/laravel-looking-glass-pkg
 
 ## Change log
 
-Please see the [changelog](changelog.md) for more information on what has changed recently.
+Please see the [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Testing
 
@@ -31,7 +31,7 @@ $ composer test
 
 ## Contributing
 
-Please see [contributing.md](contributing.md) for details and a todolist.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details and a todolist.
 
 ## Security
 
