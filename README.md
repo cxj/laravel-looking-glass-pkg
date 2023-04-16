@@ -1,6 +1,7 @@
 # Looking Glass Laravel Package
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
+[![GitHub Tests Action Status][ico-ci-status]][link-ci-status]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![StyleCI][ico-styleci]][link-styleci]
 
@@ -44,10 +45,12 @@ If you discover any security related issues, please email cxjohnson@gmail.com in
 AGPL-3.0-or-later. Please see the [license file](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/cxj/laravel-looking-glass-pkg.svg?style=flat-square
+[ico-ci-status]: https://img.shields.io/github/actions/workflow/status/cxj/laravel-looking-glass-pkg/run-tests.yml?branch=main&label=tests&style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/cxj/laravel-looking-glass-pkg.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/packagist/cxj/laravel-looking-glass-pkg.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/cxj/laravel-looking-glass-pkg
+[link-ci-status]: 
 [link-downloads]: https://packagist.org/packages/cxj/laravel-looking-glass-pkg
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/cxj
