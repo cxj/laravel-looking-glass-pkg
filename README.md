@@ -7,8 +7,6 @@
 
 A status monitoring board for distributed or remote applications.
 
-Take a look at [CONTRIBUTING.md](CONTRIBUTING.md) to see a to do list.
-
 ## Installation
 
 Via Composer
@@ -29,9 +27,9 @@ Please see the [CHANGELOG](CHANGELOG.md) for more information on what has change
 $ composer test
 ```
 
-## Contributing
+## Contributing and Future Plans
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details and a todolist.
+Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for details and a To-Do list.
 
 ## Security
 
