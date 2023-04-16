@@ -9,7 +9,7 @@
             "homepage": "http://cxj.github.io/"
         }
     ],
-    "homepage": "https://github.com/cxj/looking-glass-pkg",
+    "homepage": "https://github.com/cxj/laravel-looking-glass-pkg",
     "keywords": ["laravel", "LookingGlass"],
     "require": {
         "php": "^8.1",
