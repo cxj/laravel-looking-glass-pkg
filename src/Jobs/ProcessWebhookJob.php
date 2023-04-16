@@ -12,7 +12,10 @@ use Spatie\WebhookClient\Jobs\ProcessWebhookJob as SpatieProcessWebhookJob;
 
 class ProcessWebhookJob extends SpatieProcessWebhookJob
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * Execute the job.
@@ -21,17 +24,17 @@ class ProcessWebhookJob extends SpatieProcessWebhookJob
     {
         Log::debug(__METHOD__);                                      // debug
         Log::debug(
-            'webhookCall: ' . json_encode($this->webhookCall, JSON_PRETTY_PRINT)
+            'webhookCall: '.json_encode($this->webhookCall, JSON_PRETTY_PRINT)
         );                                                           // debug
 
         // 🤬 arrays
-        $result = (object)$this->webhookCall->payload['result'];
+        $result = (object) $this->webhookCall->payload['result'];
 
         // Insert into DB table of health
         RemoteHealthCheckModel::updateOrCreate(
             [
-                'app_name' => $this->webhookCall->payload['name'],
-                'check_name' => $this->webhookCall->payload['label']
+                'app_name'   => $this->webhookCall->payload['name'],
+                'check_name' => $this->webhookCall->payload['label'],
             ],
             ['result' => json_encode($result)]
         );

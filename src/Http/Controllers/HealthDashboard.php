@@ -2,11 +2,11 @@
 
 namespace Cxj\LookingGlass\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Contracts\View\View;
 use Spatie\Health\Commands\RunHealthChecksCommand;
 use Spatie\Health\Health;
 use Spatie\Health\ResultStores\ResultStore;

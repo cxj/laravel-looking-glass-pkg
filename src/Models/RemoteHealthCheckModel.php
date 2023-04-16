@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int    $id
  * @property string $app_name
  * @property string $check_name
- * @property mixed $result
+ * @property mixed  $result
  * @property string $created_at
  * @property string $updated_at
+ *
  * @mixin Builder;
  */
 class RemoteHealthCheckModel extends Model
@@ -25,6 +26,6 @@ class RemoteHealthCheckModel extends Model
         'check_name',
         'result',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 }

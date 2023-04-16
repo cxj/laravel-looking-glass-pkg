@@ -17,14 +17,14 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        echo 'BOOT ' . __METHOD__ . PHP_EOL; // debug
+        echo 'BOOT '.__METHOD__.PHP_EOL; // debug
 
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cxj');
 
         Blade::component('app-layout', AppLayout::class);
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'cxj');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        $this->loadRoutesFrom(__DIR__ . '/routes.php');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -39,10 +39,10 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        echo 'WTF ' . __METHOD__ . PHP_EOL; // debug
+        echo 'WTF '.__METHOD__.PHP_EOL; // debug
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/looking-glass.php',
+            __DIR__.'/../config/looking-glass.php',
             'looking-glass'
         );
 
@@ -57,7 +57,6 @@ class LookingGlassServiceProvider extends ServiceProvider
         $this->app->register(WebhookClientServiceProvider::class);
 
         $this->app->register(HealthServiceProvider::class); // testing?
-
 
         /*
          * Needed?
@@ -81,11 +80,11 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
-        echo __METHOD__ . ' publishing config and command...' . PHP_EOL; // debug
+        echo __METHOD__.' publishing config and command...'.PHP_EOL; // debug
 
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__ . '/../config/looking-glass.php' => config_path(
+            __DIR__.'/../config/looking-glass.php' => config_path(
                 'looking-glass.php'
             ),
         ], 'looking-glass.config');
