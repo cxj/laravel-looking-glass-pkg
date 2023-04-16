@@ -1,11 +1,8 @@
 # Looking Glass Laravel Package
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-
 [![GitHub Tests Action Status][ico-ci-status]][link-ci-status]
-
 [![Total Downloads][ico-downloads]][link-downloads]
-
 [![StyleCI][ico-styleci]][link-styleci]
 
 A status monitoring board for distributed or remote applications.
