@@ -47,11 +47,12 @@ AGPL-3.0-or-later. Please see the [license file](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/cxj/laravel-looking-glass-pkg.svg?style=flat-square
 [ico-ci-status]: https://img.shields.io/github/actions/workflow/status/cxj/laravel-looking-glass-pkg/run-tests.yml?branch=main
 [ico-downloads]: https://img.shields.io/github/downloads/cxj/laravel-looking-glass-pkg/total
-[ico-styleci]: https://styleci.io/repos/packagist/cxj/laravel-looking-glass-pkg.svg?style=flat-square
+[ico-styleci]: https://github.styleci.io/repos/618907394/shield?branch=main
 
 [link-packagist]: https://packagist.org/packages/cxj/laravel-looking-glass-pkg
 [link-ci-status]: https://github.com/cxj/laravel-looking-glass-pkg/actions/workflows/run-tests.yml
 [link-downloads]: https://packagist.org/packages/cxj/laravel-looking-glass-pkg
-[link-styleci]: https://styleci.io/repos/12345678
+[link-styleci]: https://github.styleci.io/repos/618907394?branch=main
+
 [link-author]: https://github.com/cxj
 [link-contributors]: ../../contributors
