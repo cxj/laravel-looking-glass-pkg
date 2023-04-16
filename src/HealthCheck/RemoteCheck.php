@@ -10,13 +10,12 @@ class RemoteCheck extends Check
 {
     private Result $result;
 
-
     public function __construct(private readonly RemoteHealthCheckModel $remote)
     {
         $this->result = Result::make();
 
-        $this->name  = $remote->app_name . $remote->check_name;
-        $this->label = $remote->app_name . ':' . $remote->check_name;
+        $this->name = $remote->app_name.$remote->check_name;
+        $this->label = $remote->app_name.':'.$remote->check_name;
 
         parent::__construct();
     }

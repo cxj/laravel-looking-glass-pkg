@@ -100,7 +100,7 @@ class RunHealthChecksCommand extends Command
     {
         app(Health::class)
             ->resultStores()
-            ->each(fn(ResultStore $store) => $store->save($results));
+            ->each(fn (ResultStore $store) => $store->save($results));
 
         return $this;
     }
@@ -109,7 +109,7 @@ class RunHealthChecksCommand extends Command
     {
         $resultsWithMessages =
             $results->filter(
-                fn(Result $result) => !empty($result->getNotificationMessage())
+                fn (Result $result) => !empty($result->getNotificationMessage())
             );
 
         if ($resultsWithMessages->count() === 0) {
@@ -137,7 +137,7 @@ class RunHealthChecksCommand extends Command
         Result $result,
         ?Exception $exception = null
     ): void {
-        $status = ucfirst((string)$result->status->value);
+        $status = ucfirst((string) $result->status->value);
 
         $okMessage = $status;
 
@@ -146,7 +146,7 @@ class RunHealthChecksCommand extends Command
         }
 
         match ($result->status) {
-            Status::ok() => $this->info($okMessage),
+            Status::ok()      => $this->info($okMessage),
             Status::warning() => $this->comment(
                 "{$status}: {$result->getNotificationMessage()}"
             ),
