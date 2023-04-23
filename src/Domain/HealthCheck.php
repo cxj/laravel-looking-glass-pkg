@@ -18,9 +18,13 @@ class HealthCheck
     public function init(): void
     {
         $staticList = [
-            UsedDiskSpaceCheck::new()->label('Local used disk space'),
-            DatabaseCheck::new()->label('Local database'),
-            OptimizedAppCheck::new(),
+            UsedDiskSpaceCheck::new()->label('Local used disk space')->name(
+                'LgLocalUsedDiskSpaceCheck'
+            ),
+            DatabaseCheck::new()->label('Local database')->name(
+                'LgLocalDatabaseCheck'
+            ),
+            OptimizedAppCheck::new()->name('LgLocalOptimizedAppCheck'),
         ];
 
         $remoteList = [];

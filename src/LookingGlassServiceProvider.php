@@ -6,6 +6,7 @@ use Cxj\LookingGlass\Console\Commands\RunHealthChecksCommand;
 use Cxj\LookingGlass\View\Components\AppLayout;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Health\HealthServiceProvider;
 use Spatie\WebhookClient\WebhookClientServiceProvider;
@@ -17,9 +18,7 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        echo 'BOOT '.__METHOD__.PHP_EOL; // debug
-
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'cxj');
+        Log::debug(__METHOD__); // debug
 
         Blade::component('app-layout', AppLayout::class);
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'cxj');
@@ -39,7 +38,7 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        echo 'WTF '.__METHOD__.PHP_EOL; // debug
+        Log::debug(__METHOD__); // debug
 
         $this->mergeConfigFrom(
             __DIR__.'/../config/looking-glass.php',
@@ -51,20 +50,11 @@ class LookingGlassServiceProvider extends ServiceProvider
             return new LookingGlassServiceProvider($app);
         });
 
-        // FAWKING Laravel
         // This needs to be here to be sure Webhook service provider gets
         // loaded before the custom webhook route is registered by Laravel.
         $this->app->register(WebhookClientServiceProvider::class);
 
-        $this->app->register(HealthServiceProvider::class); // testing?
-
-        /*
-         * Needed?
-         * Create aliases for the dependency.
-         */
-        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-//        $loader->alias('AuthorizationServer', 'LucaDegasperi\OAuth2Server\Facades\AuthorizationServerFacade');
-//        $loader->alias('ResourceServer', 'LucaDegasperi\OAuth2Server\Facades\ResourceServerFacade');
+        $this->app->register(HealthServiceProvider::class); // ??
     }
 
     /**
@@ -80,7 +70,7 @@ class LookingGlassServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
-        echo __METHOD__.' publishing config and command...'.PHP_EOL; // debug
+        Log::debug(__METHOD__); // debug
 
         // Publishing the configuration file.
         $this->publishes([
@@ -88,21 +78,6 @@ class LookingGlassServiceProvider extends ServiceProvider
                 'looking-glass.php'
             ),
         ], 'looking-glass.config');
-
-        // Publishing the views.
-        /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/cxj'),
-        ], 'looking-glass.views');*/
-
-        // Publishing assets.
-        /*$this->publishes([
-            __DIR__.'/../resources/assets' => public_path('vendor/cxj'),
-        ], 'looking-glass.views');*/
-
-        // Publishing the translation files.
-        /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/cxj'),
-        ], 'looking-glass.views');*/
 
         // Registering package commands.
         $this->commands([
