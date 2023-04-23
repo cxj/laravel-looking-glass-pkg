@@ -30,7 +30,7 @@ class LookingGlassServiceProvider extends ServiceProvider
             $this->bootForConsole();
         }
 
-        AboutCommand::add('Looking Glass', fn () => ['Version' => '0.0.2']);
+        AboutCommand::add('Looking Glass', fn () => ['Version' => '0.0.3']);
     }
 
     /**
